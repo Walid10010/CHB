@@ -1,8 +1,10 @@
 # CHB — Clustering Hardness Benchmark
 
-[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/) <!-- TODO: replace with direct paper / arXiv link once available -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) <!-- TODO: replace XXXXXXX after the Zenodo release (use the all-versions concept DOI) -->
+[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://openreview.net/pdf?id=9zXUOLxbcL)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Walid10010/CHB/blob/main/examples/quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<!-- TODO (DOI): uncomment after the Zenodo release; use the all-versions concept DOI:
+     [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
 
 Official implementation of the ICML 2026 paper
 **"CHB: A Diagnostic Toolkit for Hardness-Aware Clustering Evaluation"**

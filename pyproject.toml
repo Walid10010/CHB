@@ -36,7 +36,7 @@ dependencies = [
 
 [project.urls]
 Repository = "https://github.com/Walid10010/CHB"
-Paper = "https://proceedings.mlr.press/v306/"
+Paper = "https://openreview.net/pdf?id=9zXUOLxbcL"  # TODO: switch to the PMLR v306 page once published
 
 [project.scripts]
 chb = "chb.metrics:_combined_cli_main"
