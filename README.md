@@ -1,7 +1,6 @@
 # CHB — Clustering Hardness Benchmark
 
-[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/) <!-- TODO: replace with direct paper / arXiv link once available -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) <!-- TODO: replace XXXXXXX after the Zenodo release (use the all-versions concept DOI) -->
+[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Official implementation of the ICML 2026 paper
