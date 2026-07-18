@@ -1,6 +1,6 @@
 # CHB — Clustering Hardness Benchmark
 
-[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/)
+[![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/](https://openreview.net/pdf?id=9zXUOLxbcL))
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Official implementation of the ICML 2026 paper
