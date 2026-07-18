@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+build/
+dist/
+*.egg-info/
+.idea/
+.vscode/
+.ipynb_checkpoints/
+combined_results/
+mnist_out/

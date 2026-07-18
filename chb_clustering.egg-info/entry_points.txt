@@ -1,2 +1,0 @@
-[console_scripts]
-chb = chb.metrics:_combined_cli_main
