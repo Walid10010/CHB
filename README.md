@@ -1,10 +1,31 @@
 # CHB — Clustering Hardness Benchmark
 
+Official implementation of the ICML 2026 paper
+**"CHB: A Diagnostic Toolkit for Hardness-Aware Clustering Evaluation"**
+(Walid Durani, Philipp Jahn, Collin Leiber, David B. Hoffmann, Thomas Seidl,
+Claudia Plant, Christian Böhm).
+ 
 Computes the CHB hardness fingerprint **h(D) = (S; C; T)** for a labeled
 dataset, plus the separability gate, the blob-calibrated topology evidence
-T_evid, and the deterministic regime assignment (**A / B / C**), as described
-in the paper *"CHB: A Diagnostic Toolkit for Hardness-Aware Clustering
-Evaluation"*.
+T_evid, and the deterministic regime assignment (**A / B / C**).
+ 
+## Citation
+ 
+If you use CHB, please cite:
+ 
+```bibtex
+@inproceedings{durani2026chb,
+  title     = {{CHB}: A Diagnostic Toolkit for Hardness-Aware Clustering Evaluation},
+  author    = {Durani, Walid and Jahn, Philipp and Leiber, Collin and
+               Hoffmann, David B. and Seidl, Thomas and Plant, Claudia and
+               B{\"o}hm, Christian},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {306},
+  publisher = {PMLR},
+  year      = {2026}
+}
+```
 
 ## Install
 
