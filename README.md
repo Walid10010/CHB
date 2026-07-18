@@ -91,3 +91,7 @@ Reports produced by earlier code versions use old key names; the `chb`
 annotate mode maps them automatically. Their density block
 (`DensityComplexity`) is treated as outdated and is recomputed on the next
 `both`/`batch` run.
+
+## License
+
+Released under the [MIT License](LICENSE).
