@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage[paperwidth=19.4cm,paperheight=30cm,margin=2mm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+\fcolorbox{black!50}{gray!3}{
+\begin{minipage}{0.97\textwidth}
+\vspace{0.2cm}
+
+% Title
+\begin{center}
+{\Large \textbf{CHB Framework: Hardness-Aware Clustering Evaluation}}\\[0.1cm]
+{\small \textit{From aggregate leaderboards to mechanism-level diagnosis}}
+\end{center}
+
+\vspace{0.1cm}
+\hrule height 0.5pt
+\vspace{0.12cm}
+
+% I/O Contract - compact
+\noindent
+\fcolorbox{black!40}{blue!8}{
+\begin{minipage}{0.47\textwidth}
+\footnotesize
+\textbf{Input:} $(\mathcal{D}, y)$ -- dataset + reference labels\\
+{\scriptsize \textit{(labels for diagnosis only; never used to fit clustering)}}
+\end{minipage}
+}
+\hfill
+\fcolorbox{black!40}{green!8}{
+\begin{minipage}{0.47\textwidth}
+\footnotesize
+\textbf{Output:} Regime $\in \{A,B,C\}$ + fingerprint $\textbf{h}(\mathcal{D})$\\
+{\scriptsize + regime-conditioned performance}
+\end{minipage}
+}
+
+\vspace{0.15cm}
+
+% Two-column layout for compactness
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{\underline{The Hardness Fingerprint} $\textbf{h}(\mathcal{D}) = (\mathcal{S}; \mathcal{C}; \mathcal{T})$}\\[-0.05cm]
+{\scriptsize \textit{Descriptor-only: no clustering runs required}}
+\vspace{0.08cm}
+
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}c@{\hspace{2pt}}l@{\hspace{6pt}}p{5.5cm}@{}}
+\vspace*{-0.2cm} & \\
+\multicolumn{3}{@{}l}{\cellcolor{blue!10}\textbf{Separation ($\mathcal{S}$)} -- \textit{Local identifiability}} \\
+$\mathcal{S}_1$ & Overlap & Cross-label $k$NN mixing ($\uparrow$ worse) \\
+$\mathcal{S}_2$ & Hubness & Hub-mediated shortcuts ($\uparrow$ worse) \\
+$\mathcal{S}_3$ & Margins & Normalized gap thickness ($\uparrow$ better) \\[0.08cm]
+\vspace*{-0.1cm} & \\
+
+\multicolumn{3}{@{}l}{\cellcolor{orange!15}\textbf{Cohesion ($\mathcal{C}$)} -- \textit{Scale compatibility}} \\
+$\mathcal{C}_1$ & Density & Multi-scale heterogeneity ($\uparrow$ harder) \\
+$\mathcal{C}_2$ & Shape & Linear elongation ($\uparrow$ harder) \\[0.08cm]
+\vspace*{-0.1cm} & \\
+
+\multicolumn{3}{@{}l}{\cellcolor{purple!10}\textbf{Topology ($\mathcal{T}$)} -- \textit{Structural complexity}} \\
+\multicolumn{3}{@{}l}{\quad\scriptsize\textit{(scalable: subsampled + MST proxy + radius-capped)}} \\
+$\mathcal{T}_1$ & PH$_0$ & Component persistence ($\uparrow$ delayed merge) \\
+$\mathcal{T}_2$ & PH$_1$ & Loop persistence ($\uparrow$ non-convex) \\
+$\mathcal{T}_3$ & PH$_2$ & Void persistence ($\uparrow$ shell-like) \\
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+\textbf{\underline{Regime Assignment Rule}}
+{\scriptsize \textit{(semantic cutoffs + null-calibrated topology)}}
+\vspace{0.08cm}
+
+\footnotesize
+\textbf{Separability Gate} {\scriptsize (2-of-3 failure triggers collapse)}
+\vspace*{0.1cm}
+
+Gate FAILS if:
+\[
+\mathbb{I}[\mathcal{S}_1(\mathcal{D}) > \tau_1] + \mathbb{I}[\mathcal{S}_2(\mathcal{D}) > \tau_2] + \mathbb{I}[\mathcal{S}_3(\mathcal{D}) < \tau_3] \geq 2
+\]
+\vspace{0.05cm}
+
+\textbf{Topology Evidence} {\scriptsize ($\tau_{\text{TOP}} = 15.0$: 95\% under Gaussian-blob null)}
+\[
+\mathcal{T}_{\text{evid}}(\mathcal{D}) = \log(1{+}\mathcal{T}_1) + \log(1{+}\mathcal{T}_2) + \log(1{+}\mathcal{T}_3)
+\]
+\vspace{0.05cm}
+
+\textbf{Regime Assignment}
+\vspace{0.13cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}|>{\centering\arraybackslash}m{0.7cm}|l|p{2.8cm}|@{}}
+\hline
+\cellcolor{red!25}\textbf{A} & Gate FAILS & Separability Collapse \\
+\hline
+\cellcolor{yellow!35}\textbf{B} & Pass $\land$ $\mathcal{T}_{\text{evid}} > 15$ & Topology Mismatch \\
+\hline
+\cellcolor{green!25}\textbf{C} & Pass $\land$ $\mathcal{T}_{\text{evid}} \leq 15$ & Scale heterogeneity \\
+\hline
+\end{tabular}
+\end{minipage}
+
+\vspace{0.2cm}
+\hrule height 0.3pt
+\vspace{0.12cm}
+
+% Bottom section: Key Results
+\begin{center}
+\textbf{\underline{Key Empirical Findings} (Q1--Q3)}
+\end{center}
+\vspace{0.03cm}
+
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}p{0.31\textwidth}@{\hspace{0.01\textwidth}}p{0.31\textwidth}@{\hspace{0.01\textwidth}}p{0.35\textwidth}@{}}
+
+\textbf{Q1: Regime Structure} & \textbf{Q2: Family$\times$Regime Coupling} & \textbf{Q3: Representation Lens} \\[0.03cm]
+
+\begin{tabular}[t]{@{}ll@{}}
+\cellcolor{red!25} A: & CIFAR-10/100, STL-10, SVHN \\
+\cellcolor{yellow!35} B: & MNIST, KMNIST, FMNIST \\
+\cellcolor{green!25} C: & Pendigits, Texture, Wisc \\
+\end{tabular}
+&
+\begin{tabular}[t]{@{}l@{~}c@{~}c@{~}c@{}}
+& \cellcolor{red!15}A & \cellcolor{yellow!25}B & \cellcolor{green!15}C \\
+Median NMI & 0.07 & 0.53 & 0.70 \\
+Best family & Spec. & Deep-P. & Spec. \\
+\end{tabular}
+&
+\begin{tabular}[t]{@{}l@{}}
+Repr.\ learning $\Rightarrow$ movement in CHB space \\[0.02cm]
+\textbf{A$\to$A}: $C{\downarrow}, T{\downarrow}$ but $S$ not rescued \\
+\quad $\Rightarrow$ bounded, family-conditional gains \\
+\textbf{B$\to$C}: $S$ rescued + $T{\downarrow}$ \\
+\quad $\Rightarrow$ broad gains (MNIST: +40\% NMI) \\
+\end{tabular}
+\\
+\end{tabular}
+
+\vspace{0.08cm}
+{\footnotesize \hspace{0.02\textwidth} \textit{Core insight:} Geometry shifts ($C{\downarrow}, T{\downarrow}$) \textbf{cannot escape the separation gate} without rescuing $S$ $\Rightarrow$ leaderboards mislead without regime conditioning}
+
+\vspace{0.15cm}
+\hrule height 0.3pt
+\vspace{0.08cm}
+
+% Improved workflow at bottom
+\begin{center}
+\small
+\textbf{Workflow:} \fbox{$(\mathcal{D}, y)$} $\xrightarrow{\text{compute}}$ \fbox{$\textbf{h}(\mathcal{D})$} $\xrightarrow{\text{gate}}$ \fbox{Regime} $\xrightarrow{\text{condition}}$ \fbox{Diagnosis} $\xrightarrow{\text{attribute}}$ \fbox{$\mathcal{S}$ vs $\mathcal{C}$ vs $\mathcal{T}$}
+\end{center}
+
+\vspace{0.1cm}
+\end{minipage}
+}
+\end{center}
+
+\end{document}

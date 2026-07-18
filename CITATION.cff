@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use CHB, please cite the paper below."
+title: "CHB: A Diagnostic Toolkit for Hardness-Aware Clustering Evaluation"
+license: MIT
+repository-code: "https://github.com/Walid10010/CHB"
+# doi: 10.5281/zenodo.XXXXXXX  # TODO: uncomment and fill in after the Zenodo release
+authors:
+  - family-names: Durani
+    given-names: Walid
+  - family-names: Jahn
+    given-names: Philipp
+  - family-names: Leiber
+    given-names: Collin
+  - family-names: Hoffmann
+    given-names: David B.
+  - family-names: Seidl
+    given-names: Thomas
+  - family-names: Plant
+    given-names: Claudia
+  - family-names: "Böhm"
+    given-names: Christian
+preferred-citation:
+  type: conference-paper
+  title: "CHB: A Diagnostic Toolkit for Hardness-Aware Clustering Evaluation"
+  authors:
+    - family-names: Durani
+      given-names: Walid
+    - family-names: Jahn
+      given-names: Philipp
+    - family-names: Leiber
+      given-names: Collin
+    - family-names: Hoffmann
+      given-names: David B.
+    - family-names: Seidl
+      given-names: Thomas
+    - family-names: Plant
+      given-names: Claudia
+    - family-names: "Böhm"
+      given-names: Christian
+  collection-title: "Proceedings of the 43rd International Conference on Machine Learning (ICML)"
+  collection-type: proceedings
+  volume: 306
+  publisher:
+    name: PMLR
+  year: 2026

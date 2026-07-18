@@ -11,7 +11,7 @@ import sys
 import time
 import numpy as np
 
-import chb_metrics as chb
+import chb.metrics as chb
 
 
 def run_case(name, X, y):

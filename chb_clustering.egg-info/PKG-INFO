@@ -1,3 +1,27 @@
+Metadata-Version: 2.4
+Name: chb-clustering
+Version: 1.0.0
+Summary: CHB: Clustering Hardness Benchmark - hardness fingerprints, separability gate, and regime diagnosis for clustering evaluation (ICML 2026)
+Author: Philipp Jahn, Collin Leiber, David B. Hoffmann, Thomas Seidl, Claudia Plant, Christian Böhm
+Author-email: Walid Durani <durani@dbs.ifi.lmu.de>
+License-Expression: MIT
+Project-URL: Repository, https://github.com/Walid10010/CHB
+Project-URL: Paper, https://proceedings.mlr.press/v306/
+Keywords: clustering,benchmark,evaluation,hardness,persistent homology,cluster analysis
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: scipy>=1.10
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: pandas>=2.0
+Requires-Dist: ripser>=0.6
+Dynamic: license-file
+
 # CHB — Clustering Hardness Benchmark
 
 [![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://proceedings.mlr.press/v306/) <!-- TODO: replace with direct paper / arXiv link once available -->

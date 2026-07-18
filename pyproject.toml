@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chb-clustering"
+version = "1.0.0"  # keep in sync with chb/__init__.py
+description = "CHB: Clustering Hardness Benchmark - hardness fingerprints, separability gate, and regime diagnosis for clustering evaluation (ICML 2026)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Walid Durani", email = "durani@dbs.ifi.lmu.de" },
+  { name = "Philipp Jahn" },
+  { name = "Collin Leiber" },
+  { name = "David B. Hoffmann" },
+  { name = "Thomas Seidl" },
+  { name = "Claudia Plant" },
+  { name = "Christian Böhm" },
+]
+keywords = ["clustering", "benchmark", "evaluation", "hardness", "persistent homology", "cluster analysis"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "pandas>=2.0",
+  "ripser>=0.6",
+]
+
+[project.urls]
+Repository = "https://github.com/Walid10010/CHB"
+Paper = "https://proceedings.mlr.press/v306/"
+
+[project.scripts]
+chb = "chb.metrics:_combined_cli_main"
+
+[tool.setuptools]
+packages = ["chb"]
