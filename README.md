@@ -3,6 +3,8 @@
 [![ICML 2026](https://img.shields.io/badge/ICML-2026-blue.svg)](https://openreview.net/pdf?id=9zXUOLxbcL)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Walid10010/CHB/blob/main/examples/quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![tests](https://github.com/Walid10010/CHB/actions/workflows/ci.yml/badge.svg)](https://github.com/Walid10010/CHB/actions)
+[![PyPI](https://img.shields.io/pypi/v/chb-clustering.svg)](https://pypi.org/project/chb-clustering/)
 <!-- TODO (DOI): uncomment after the Zenodo release; use the all-versions concept DOI:
      [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
 
